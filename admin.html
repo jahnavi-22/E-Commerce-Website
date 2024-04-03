@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-900">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="h-full bg-gray-900 text-white">
+<div class="flex min-h-full flex-col justify-items-center px-6 py-12 lg:px-8">
+    <h1 class="text-center text-4xl font-bold mb-8">Stock List</h1>
+    <div class="flex items-center mb-4 max-w-40 mx-auto">
+        <label for="name" class="block mb-2">Name</label>
+        <input type="text" id="name" class="w-full rounded-md border-gray-300 mx-4 bg-gray-800 text-gray-100 px-4 py-2 mb-4">
+
+        <label for="description" class="block mb-2">Description</label>
+        <input type="text" id="description"  class="w-full rounded-md  mx-4 border-gray-300 bg-gray-800 text-gray-100 px-4 py-2 mb-4">
+        
+        <label for="price" class="block mb-2">Price</label>
+        <input type="number" id="price"  class="w-full rounded-md mx-4 border-gray-300 bg-gray-800 text-gray-100 px-4 py-2 mb-4">
+        
+        <label for="quantity" class="block mb-2">Quantity</label>
+        <input type="number" id="quantity" class="w-full rounded-md mx-4 border-gray-300 bg-gray-800 text-gray-100 px-4 py-2 mb-4">
+
+        <label for="image" class="block mb-2">Image URL</label>
+        <input type="text" id="image" name="image" class="w-full rounded-md mx-4 border-gray-300 bg-gray-800 text-gray-100 px-4 py-2 mb-4">
+        <br>
+
+        <button id="addbtn" onclick="addProduct()" class="flex space-x-4 rounded-md bg-indigo-600  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+
+    </div><div>
+        <!-- <button id="showMore" onclick="showMore()" class="w-full bg-gray-800 text-gray-100 rounded-md py-2 mt-2">Show More</button> -->
+        </div>
+
+        <div id="shoppingList" class="mt-8">
+            <table id="table" class="w-full bg-gray-800 text-gray-100">
+                <thead>
+                    <tr>
+                        <th class="py-2">Serial No.</th>
+                        <th class="py-2">Product</th>
+                        <th class="py-2">Product Name</th>
+                        <th class="py-2">Product Description</th>
+                        <th class="py-2">Product Price</th>
+                        <th class="py-2">Product Quantity</th>
+                        <th class="py-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productsBody"></tbody>
+            </table>
+        </div>
+        <div id="modal" style="display: none" class="relative z-20" aria-labelledby="modal-title" aria-modal="true">
+            <!-- <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div> -->
+            <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+              <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 text-base font-semibold leading-6 text-gray-900">
+                    <h3 class="text-center text-xl font-semibold leading-8 text-gray-900 sm:flex items-centers" >Update Product</h3>
+                    <br>
+
+                    <form id="updateForm" class="sm:flex sm:flex-col ">
+                        Product Name: <input type="text" id="updatedName" name="updatedName" class="border-2" required><br>
+                        Product Description:<input type="text" id="updatedDescription" name="updatedDescription" class="border-2" required><br>
+                        Product Price:<input type="number" id="updatedPrice" name="updatedPrice" class="border-2" required><br>
+                        Product Quantity:<input type="number" id="updatedQuantity" name="updatedQuantity" class="border-2" required><br>
+                        Image URL:<input type="text" id="updatedImage" name="updatedImage" class="border-2"><br>
+                    </form>
+                  </div>
+                  <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button id="updateButton" type="button" onclick="updateProduct()" class="flex space-x-4 rounded-md bg-indigo-600  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>&nbsp;&nbsp;&nbsp;
+                    <button type="button" onclick="closeUpdateModal()"class="flex space-x-4 rounded-md bg-indigo-600  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    <br>
+    <button id="logOut" onclick="logout()" class="block mx-auto w-96 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log Out</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+ 

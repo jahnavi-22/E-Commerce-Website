@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-full bg-gray-900 text-white">
+  <h1 class="text-center text-4xl font-bold mb-8 px-6 py-12 ">Cart</h1>
+
+  <div id="cart-div" class="mt-8">
+    <table id="cart-table" class="w-full bg-gray-800 text-gray-100">
+        <thead>
+            <tr>
+                <th class="py-2">Serial No.</th>
+                <th class="py-2">Product</th>
+                <th class="py-2">Product Name</th>
+                <th class="py-2">Product Description</th>
+                <th class="py-2">Product Price</th>
+                <th class="py-2">Product Quantity</th>
+                <th class="py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+    </table>
+    <br>
+    <div class="justify-evenly flex">
+    <button onclick="window.location.href='user.html'" class="flex w-96 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Close</button>
+    <button id="logOut" onclick="logout()" class="flex w-96 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log Out</button>
+  </div>
+</div>      
+</body>
+<script src="script.js"></script>
+
+</html>

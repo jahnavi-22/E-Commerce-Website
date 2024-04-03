@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-300">
+
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <!-- <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          </div> -->
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+              <a href="login.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+              <a href="register.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Register</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button type="button" onclick="checkLogin()" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <span class="absolute -inset-1.5"></span>
+              <img width="30" height="30" onclick="displayCart()" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/shopping-cart--v1.png" alt="shopping-cart--v1"/>          
+          </button>
+      </div>
+    </div>
+  </nav>
+    
+  <div class="mx-auto px-12 py-12 text-center">
+    <h2 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-6xl">Welcome to Splurge!</h2>
+    <p class="mt-6 text-lg leading-8 text-gray-700">Curating Comfort, Crafting Convenience</p>
+  </div>
+
+  <div id="shoppingList" class="m-8 ">
+    <table id="table" class="w-full bg-gray-800 text-gray-100 rounded-md">
+        <thead>
+            <tr>
+                <th class="py-2 bg-gray-900">Serial No.</th>
+                <th class="py-2 bg-gray-900">Product</th>
+                <th class="py-2 bg-gray-900">Product Name</th>
+                <th class="py-2 bg-gray-900">Product Description</th>
+                <th class="py-2 bg-gray-900">Product Price</th>
+                <th class="py-2 bg-gray-900">Product Quantity</th>
+                <th class="py-2 bg-gray-900">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="productsBody"></tbody>
+    </table>
+  </div>
+  <br>
+  <button id="logOut" onclick="logout()" class="block mx-auto w-96 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log Out</button>
+  <br>
+</body>
+<script src="script.js"></script>
+</html>
+
